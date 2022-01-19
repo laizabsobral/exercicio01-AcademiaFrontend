@@ -9,6 +9,7 @@ class Display extends Component {
   }
 }
 
+
 class Button extends Component {
   render() {
     const { value, onClick, className, disabled } = this.props;
