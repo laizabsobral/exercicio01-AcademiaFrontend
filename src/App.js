@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
+import * as S from "./styles";
 
 class Display extends Component {
   render() {
     const { output } = this.props;
-    return <div className="display">{output}</div>;
+    return <S.display>{output}</S.display>;
     
   }
 }
-
 
 class Button extends Component {
   render() {
@@ -127,9 +127,9 @@ class Calculator extends Component {
   render() {
     const { number, result, operator } = this.state;
     return (
-      <div className="calculator">
+      <S.Calculator>
         <Display output={number ? number : result + operator} />
-        <div className="LayoutButtons">
+        <S.LayoutButtons>
           <Button value="C" className="button-operacao" onClick={this.handleClearInput} />
           <Button value="+-" className="button-operacao" onClick={this.handleNegateInput} />
           <Button value="%" className="button-operacao" onClick="" /> {/* nao funciona */}
@@ -149,10 +149,8 @@ class Calculator extends Component {
           <Button value="0" className="button-numero" onClick={this.handleNumberInput} />
           <Button value="." className="button-numero" onClick={this.handleCommaInput} />
           <Button value="=" className="button-operacao span-two" onClick={this.handleEqualInput} />
-        </div>
-      </div>
-    
-  
+        </S.LayoutButtons>
+      </S.Calculator>
     );
   }
 }
